@@ -13,6 +13,10 @@ function! s:HandleUserRequest(...)
   " Call the Python script and capture the output
   let l:command_response = system('python3 python/vimaimehard.py ' . shellescape(l:user_request))
 
-  " Use the response in your Vim script
-  echo l:command_response
+  " Prepare the command to be fed into Vim's command line
+  let l:vim_command = ':' . l:command_response . "\<Left>"
+
+  " Use feedkeys to put the command in Vim's command line
+  call feedkeys(l:vim_command, 'n')
 endfunction
+

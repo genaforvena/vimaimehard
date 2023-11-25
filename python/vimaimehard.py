@@ -1,5 +1,4 @@
 import sys
-import requests
 
 def process_request(user_input):
     # Implement the logic to call OpenAI API and process the response
