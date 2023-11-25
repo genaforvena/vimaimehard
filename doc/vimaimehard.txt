@@ -1,0 +1,63 @@
+
+*vimaimehard.txt*  Documentation for the vimaimehard Vim plugin.
+
+1. Introduction ................................................ |vimaimehard-intro|
+2. Installation ................................................ |vimaimehard-install|
+3. Usage ........................................................ |vimaimehard-usage|
+4. Configuration ............................................... |vimaimehard-config|
+5. Contact and Feedback ........................................ |vimaimehard-contact|
+
+==============================================================================
+INTRODUCTION                                             *vimaimehard-intro*
+
+The vimaimehard plugin provides Vim users with the ability to quickly get
+suggestions for Vim commands based on natural language queries. This plugin
+utilizes OpenAI's API to interpret user requests and suggest relevant Vim
+commands.
+
+==============================================================================
+INSTALLATION                                             *vimaimehard-install*
+
+To install vimaimehard, you can use your preferred Vim plugin manager.
+
+For example, with Vim-Plug:
+
+    Plug 'genaforvena/vimaimehard'
+
+After adding the plugin, run :PlugInstall in Vim.
+
+==============================================================================
+USAGE                                                      *vimaimehard-usage*
+
+To use vimaimehard, type the following command in Vim:
+
+    :Vimaimehard <your query here>
+
+Example:
+
+    :Vimaimehard how to delete a line
+
+The plugin will process your query and insert a suggested Vim command into
+the current buffer.
+
+==============================================================================
+CONFIGURATION                                          *vimaimehard-config*
+
+You can configure vimaimehard by setting global variables in your .vimrc file.
+Currently, the plugin supports the following configurations:
+
+    let g:vimaimehard_setting_example = 1
+
+This is an example setting. Replace it with actual configuration options
+as they become available.
+
+==============================================================================
+CONTACT AND FEEDBACK                                   *vimaimehard-contact*
+
+For questions, suggestions, or contributions, please visit the GitHub
+repository:
+
+    https://github.com/genaforvena/vimaimehard
+
+==============================================================================
+
