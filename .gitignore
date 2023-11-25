@@ -1,0 +1,18 @@
+# Python specific
+*.pyc
+__pycache__/
+venv/
+env/
+dist/
+build/
+*.egg-info/
+.mypy_cache/
+.pytest_cache/
+
+# Bash specific
+*.sh~
+*.swp
+
+# General
+.DS_Store
+
