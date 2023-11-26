@@ -3,10 +3,10 @@ import sys
 from openai import OpenAI
 
 # Retrieve OpenAI API key from environment variable
-api_key = os.getenv('OPENAI_KEY')
+api_key = os.getenv('OPENAI_API_KEY')
 
 if not api_key:
-    raise ValueError("OpenAI API key not set in environment variables")
+    raise ValueError("OPENAI_API_KEY is not set in environment variables")
 
 client = OpenAI(api_key=api_key)
 
