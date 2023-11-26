@@ -19,7 +19,8 @@ function! s:HandleUserRequest(...)
   " Open a new buffer for the response
   new
   setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile
-  call setline(1, l:command_response)
+  " Insert the response into the buffer as multiple lines
+  call setline(1, split(l:command_response, '\n'))
   setlocal nomodified
 endfunction
 
