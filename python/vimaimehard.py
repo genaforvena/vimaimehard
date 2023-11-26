@@ -1,9 +1,9 @@
 import sys
+import command_converter
 
 def process_request(user_input):
-    # Implement the logic to call OpenAI API and process the response
-    # For demonstration, let's just return the input
-    return "Processed: " + user_input
+    command = command_converter.get_command(user_input)
+    return command
 
 if __name__ == "__main__":
     user_input = ' '.join(sys.argv[1:])  # Combine all arguments into one string
