@@ -1,4 +1,9 @@
+"""
+This module contains a function that takes a user prompt and returns a Vim
+command using the OpenAI API Chat Completion.
+"""
 import os
+import sys
 from openai import OpenAI
 
 # Retrieve OpenAI API key from environment variable or set directly
@@ -9,6 +14,10 @@ client = OpenAI(api_key=api_key)
 
 
 def get_command(user_prompt):
+    """
+    This function takes a user prompt and returns a Vim command using the
+    OpenAI API Chat Completion.
+    """
     # Check if user prompt is provided
     if not user_prompt:
         raise ValueError("No user prompt provided")
@@ -29,7 +38,7 @@ def get_command(user_prompt):
         {"role": "user", "content": "How to search and replace across multiple files?"},
         {"role": "assistant", "content": ":argdo %s/search/replace/gc | update"},
         {"role": "user", "content": "How to indent a code block?"},
-        {"role": "assistant", "content": ">'}"}
+        {"role": "assistant", "content": ">'}"},
         {"role": "user", "content": "How to fold all function definitions in a Python file?"},
         {"role": "assistant", "content": "set foldmethod=indent\nset foldlevel=99\nzf/%def\\s.*/"},
         {"role": "user", "content": "How do I merge lines 5 through 10 into a single line?"},
@@ -40,15 +49,19 @@ def get_command(user_prompt):
         {"role": "assistant", "content": ":2,$g/^/+2d"},
         {"role": "user", "content": "How to encrypt the current file with a ROT13 cipher?"},
         {"role": "assistant", "content": ":%!tr 'A-Za-z' 'N-ZA-Mn-za-m'"},
-        {"role": "user", "content": "How do I convert a list of comma-separated values into a vertical list in Vim?"},
+        {"role": "user",
+         "content":
+         "How do I convert a list of comma-separated values into a vertical list in Vim?"},
         {"role": "assistant", "content": ":%s/,/\\r/g"},
         {"role": "user", "content": "How to highlight all occurrences of a word under the cursor?"},
         {"role": "assistant", "content": "set hlsearch\n/\\<\\w\\+\\>"},
-        {"role": "user", "content": "How can I sort the lines in the current file in reverse order?"},
+        {"role": "user",
+         "content": "How can I sort the lines in the current file in reverse order?"},
         {"role": "assistant", "content": ":%sort! r"},
         {"role": "user", "content": "How to automatically format a JSON file?"},
         {"role": "assistant", "content": ":%!python -m json.tool"},
-        {"role": "user", "content": "What is the command to display all lines not containing the word 'error'?"},
+        {"role": "user",
+         "content": "What is the command to display all lines not containing the word 'error'?"},
         {"role": "assistant", "content": ":v/error/p"}
     ]
 
@@ -66,6 +79,5 @@ def get_command(user_prompt):
 
 # Example usage
 if __name__ == "__main__":
-    user_input = ' '.join(sys.argv[1:])
-    print(get_command(user_input))
-
+    USER_INPUT = ' '.join(sys.argv[1:])
+    print(get_command(USER_INPUT))
