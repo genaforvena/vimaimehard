@@ -30,6 +30,26 @@ def get_command(user_prompt):
         {"role": "assistant", "content": ":argdo %s/search/replace/gc | update"},
         {"role": "user", "content": "How to indent a code block?"},
         {"role": "assistant", "content": ">'}"}
+        {"role": "user", "content": "How to fold all function definitions in a Python file?"},
+        {"role": "assistant", "content": "set foldmethod=indent\nset foldlevel=99\nzf/%def\\s.*/"},
+        {"role": "user", "content": "How do I merge lines 5 through 10 into a single line?"},
+        {"role": "assistant", "content": ":5,10join"},
+        {"role": "user", "content": "What's the command to move the current line up by 3 lines?"},
+        {"role": "assistant", "content": ":m-4"},
+        {"role": "user", "content": "How can I delete every third line starting from line 2?"},
+        {"role": "assistant", "content": ":2,$g/^/+2d"},
+        {"role": "user", "content": "How to encrypt the current file with a ROT13 cipher?"},
+        {"role": "assistant", "content": ":%!tr 'A-Za-z' 'N-ZA-Mn-za-m'"},
+        {"role": "user", "content": "How do I convert a list of comma-separated values into a vertical list in Vim?"},
+        {"role": "assistant", "content": ":%s/,/\\r/g"},
+        {"role": "user", "content": "How to highlight all occurrences of a word under the cursor?"},
+        {"role": "assistant", "content": "set hlsearch\n/\\<\\w\\+\\>"},
+        {"role": "user", "content": "How can I sort the lines in the current file in reverse order?"},
+        {"role": "assistant", "content": ":%sort! r"},
+        {"role": "user", "content": "How to automatically format a JSON file?"},
+        {"role": "assistant", "content": ":%!python -m json.tool"},
+        {"role": "user", "content": "What is the command to display all lines not containing the word 'error'?"},
+        {"role": "assistant", "content": ":v/error/p"}
     ]
 
     # Add the current user request to the history
