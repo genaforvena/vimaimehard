@@ -16,7 +16,10 @@ function! s:HandleUserRequest(...)
   " Prepare the command to be fed into Vim's command line
   let l:vim_command = ':' . l:command_response . "\<Left>"
 
-  " Use feedkeys to put the command in Vim's command line
-  call feedkeys(l:vim_command, 'n')
+  " Open a new buffer for the response
+  new
+  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile
+  call setline(1, l:command_response)
+  setlocal nomodified
 endfunction
 
