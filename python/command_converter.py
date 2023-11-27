@@ -30,7 +30,10 @@ def get_command(user_prompt):
         },
         {
             "role": "assistant",
-            "content": "To compare two files side by side in Vim, you can use the `:vsplit` command to open the files in vertical splits and then use `:windo diffthis` to activate Vim's diff mode on both windows."
+            "content": "To compare two files side by side in Vim, you can use the `:vsplit` "  +
+            "command to open the files|" + \
+            "in vertical splits and then use `:windo diffthis` to activate Vim's " +
+            "diff mode on both windows."
         },
         {
             "role": "user",
@@ -38,7 +41,10 @@ def get_command(user_prompt):
         },
         {
             "role": "assistant",
-            "content": "To record a macro, press `q` followed by a letter to store the macro (e.g., `qa`). Then, perform the desired actions. Stop recording by pressing `q` again. To play the macro, press `@` followed by the letter where the macro is stored (e.g., `@a`)."
+            "content": "To record a macro, press `q` followed by a letter to store" +
+            "the macro (e.g., `qa`). Then, perform the desired actions." +
+            "Stop recording by pressing `q` again. To play the macro," +
+            " press `@` followed by the letter where the macro is stored (e.g., `@a`)."
         },
         {
             "role": "user",
@@ -46,7 +52,9 @@ def get_command(user_prompt):
         },
         {
             "role": "assistant",
-            "content": "The global command `:g` in Vim is powerful for making changes in multiple lines. For example, `:g/foo/s//bar/g` will find all lines containing 'foo' and replace 'foo' with 'bar' in those lines."
+            "content": "The global command `:g` in Vim is powerful for " +
+            "making changes in multiple lines. For example, `:g/foo/s//bar/g` " +
+            "will find all lines containing 'foo' and replace 'foo' with 'bar' in those lines."
         },
         {
             "role": "user",
@@ -54,7 +62,9 @@ def get_command(user_prompt):
         },
         {
             "role": "assistant",
-            "content": "To create folds based on syntax in Vim, use `:set foldmethod=syntax`. Vim will automatically create folds according to the syntax of the programming language of the file."
+            "content": "To create folds based on syntax in Vim, use `:set foldmethod=syntax`. " +
+            "Vim will automatically create folds according to the " +
+            "syntax of the programming language of the file."
         },
         {
             "role": "user",
@@ -62,7 +72,9 @@ def get_command(user_prompt):
         },
         {
             "role": "assistant",
-            "content": "Yes, Vim supports using regular expressions for searching. For example, `:/\\<foo\\>` searches for the word 'foo'. You can use complex patterns like `:/\\d\\+` to search for one or more digits."
+            "content": "Yes, Vim supports using regular expressions for searching. " +
+            "For example, `:/\\<foo\\>` searches for the word 'foo'. " +
+            "You can use complex patterns like `:/\\d\\+` to search for one or more digits."
         }
     ]
 
