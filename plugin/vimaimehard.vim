@@ -16,11 +16,15 @@ function! s:HandleUserRequest(...)
   " Prepare the command to be fed into Vim's command line
   let l:vim_command = ':' . l:command_response . "\<Left>"
 
+  " Split the response into lines
+  let l:response_lines = split(l:command_response, '\n')
+
   " Open a new buffer for the response
   new
   setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile
-  " Insert the response into the buffer as multiple lines
-  call setline(1, split(l:command_response, '\n'))
+
+  " Insert the response lines into the buffer
+  call setline(1, l:response_lines)
   setlocal nomodified
 endfunction
 
