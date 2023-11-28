@@ -1,2 +1,5 @@
-python: python/*
-plugin: plugin/*
+python:
+  - '**/*.py'
+
+plugin:
+  - 'plugin/**/*'
